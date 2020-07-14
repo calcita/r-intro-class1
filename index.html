@@ -498,34 +498,6 @@ La ventana de script  &lt;span style=" font-weight: bold;    border-radius: 4px;
 # Comentarios
 
 ![](img/comentarios.gif)
-&lt;!-- --- --&gt;
-&lt;!-- # Proyecto  --&gt;
-
-&lt;!-- Permite trabajar en proyecto (.Rproj)  --&gt;
-
-&lt;!-- ![](img/rproj.png) --&gt;
-
-
-&lt;!-- --- --&gt;
-&lt;!-- # git --&gt;
-
-&lt;!-- Permite conexión a git para control de versiones   --&gt;
-&lt;!-- &lt;br&gt;&lt;br&gt;&lt;br&gt; --&gt;
-
-&lt;!-- --- --&gt;
-&lt;!-- # Web, documentos, libros, aplicaciones --&gt;
-
-&lt;!-- Creación de libros, webs, documentos, visualizadores, etc.  --&gt;
-
-&lt;!-- ```{r out.width = "60px" ,echo=FALSE} --&gt;
-&lt;!-- knitr::include_graphics("https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/shiny.png") --&gt;
-&lt;!-- knitr::include_graphics("https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/knitr.png") --&gt;
-&lt;!-- knitr::include_graphics("https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/rmarkdown.png") --&gt;
-&lt;!-- knitr::include_graphics("https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/plumber-female.png") --&gt;
-&lt;!-- knitr::include_graphics("https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/blogdown.png") --&gt;
-&lt;!-- knitr::include_graphics("https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/bookdown.png") --&gt;
-&lt;!-- knitr::include_graphics("https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/flexdashboard.png") --&gt;
-&lt;!-- ``` --&gt;
 
 ---
 class: hide-logo
@@ -569,6 +541,785 @@ class: hide-logo
 # Atajos de teclado
 
 &lt;img src="img/teclas.png" width="544" height="100%" style="display: block; margin: auto;" /&gt;
+
+---
+class: inverse, center, middle
+# R 'base'
+
+---
+class: hide-logo
+# Objetos
+
+- R es un programa  &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;'orientado a objetos'&lt;/span&gt;: variables, datos, funciones, resultados, etc., se guardan en la memoria RAM en forma de objetos con un nombre específico sin usar archivos temporales. 
+&lt;br&gt;&lt;br&gt;
+--
+
+- Cada &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;clase de objeto&lt;/span&gt; tiene diferentes atributos que determinan la forma en que trabajan dentro de R, es decir, define cuáles funciones se le pueden aplicar. 
+&lt;br&gt;&lt;br&gt;
+--
+
+- Estos objetos se pueden modificar o manipular con  &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;operadores&lt;/span&gt; y &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;funciones&lt;/span&gt; --que a su vez son objetos--. 
+&lt;br&gt;&lt;br&gt;
+--
+
+- Bajo este término se esconde la simplicidad y flexibilidad de R. 
+&lt;br&gt;&lt;br&gt;
+--
+
+- Algunas de las clases más comunes de objetos son: 'numeric', 'character', 'logical' (son &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;vectores&lt;/span&gt;), 'matrix' (&lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;matriz&lt;/span&gt;), 'data.frame' (&lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;marco de datos&lt;/span&gt;), 'list' (&lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;lista&lt;/span&gt;) y 'function' (&lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;función&lt;/span&gt;).
+
+---
+class: hide-logo
+# Tipo de objetos
+
+La cantidad de clases de objetos es muy grande y crece permanentemente a medida que se crean nuevos paquetes.
+
+&lt;!-- Casi en cada paquete existen funciones que devuelven objetos de clases únicas que sólo esa función puede --&gt;
+&lt;!-- # generar y cuya interpretación y funcionalidad es específica del paquete en --&gt;
+&lt;!-- # cuestión o de otros creados posteriormente y que dependen del mismo.  --&gt;
+&lt;!-- Por ejemplo las clases "igraph" o "Spatial" de los paquetes igraph y sp definen  --&gt;
+&lt;!-- # objetos asociados a trabajo con grafos y datos espaciales respectivamente. --&gt;
+
+
+| Objeto      | Dimensión o largo           | Tipo de elementos | Ejemplo
+|---------------|:-------------:|:------:|:------:|
+| Vector    | length() | homogéneos |<i class="fas  fa-ellipsis-v fa-3x " style="color:#5e3c99;"></i> |
+| Matriz   | dim() | homogéneos |   <i class="fas  fa-ellipsis-v fa-3x " style="color:#5e3c99;"></i><i class="fas  fa-ellipsis-v fa-3x " style="color:#5e3c99;"></i> |
+| Marco de datos    | dim() | heterogéneos |<i class="fas  fa-ellipsis-v fa-3x " style="color:#5e3c99;"></i><i class="fas  fa-ellipsis-v fa-3x " style="color:#e66101;"></i> <i class="fas  fa-ellipsis-v fa-3x " style="color:#41b6c4;"></i>|
+| Lista   | length() | heterogéneos |<i class="fas  fa-circle " style="color:#5e3c99;"></i> &lt;br&gt; <i class="fas  fa-circle " style="color:#e66101;"></i> &lt;br&gt; <i class="fas  fa-circle " style="color:#41b6c4;"></i>| 
+
+---
+class: hide-logo
+# Vector
+
+- Los vectores son la &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;estructura más básica&lt;/span&gt; que tenemos para manejar datos en R. 
+&lt;br&gt;&lt;br&gt;
+--
+
+- Un &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;escalar&lt;/span&gt; también es un &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;vector&lt;/span&gt; para R. 
+&lt;br&gt;&lt;br&gt;
+--
+
+- Comprender &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;cómo se trabaja con un vector&lt;/span&gt; en R es fundamental para entender la lógica de R.
+&lt;br&gt;&lt;br&gt;
+--
+
+- Veremos cómo los vectores trabajan con &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;operadores y funciones&lt;/span&gt;.
+&lt;br&gt;&lt;br&gt;
+--
+
+- &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;Vectorización y coerción&lt;/span&gt;.
+
+---
+# Vector
+
+- Un vector es una &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;colección de uno o más objetos del mismo tipo&lt;/span&gt; (números o caracteres pero no ambos).
+&lt;br&gt;&lt;br&gt;
+--
+
+- Según sus elementos será la clase del vector: &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;character&lt;/span&gt;, &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;numeric&lt;/span&gt;, &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;logical&lt;/span&gt;
+&lt;br&gt;&lt;br&gt;
+--
+
+- La función  &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;c()&lt;/span&gt; crea un vector.
+&lt;br&gt;&lt;br&gt;
+--
+
+- Cada elemento va separado por una &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;coma&lt;/span&gt;
+&lt;br&gt;&lt;br&gt;
+--
+
+- Con la función &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;class()&lt;/span&gt; compruebo que tipo de objeto es
+
+---
+class: hide-logo
+# Vector numérico
+
+
+```r
+*x &lt;- c(15, 16, 17, 19)
+```
+--
+
+```r
+x
+```
+
+```
+[1] 15 16 17 19
+```
+--
+
+```r
+*class(x)
+```
+
+```
+[1] "numeric"
+```
+Se crea con la función c(), y contiene solo números separados por coma.
+
+![](img/important.png) .content-box-purple[El separador de decimales es el punto.]
+
+---
+class: hide-logo
+# Vector de caracteres
+
+- Para el caso de &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;texto&lt;/span&gt;, la clase "character" es la que utiliza R para manejar este tipo de objetos. 
+
+- Al igual que en la mayoría de los lenguajes de programación, R utiliza las comillas dobles (&lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;&amp;quot;&lt;/span&gt;) o simples (&lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;'&lt;/span&gt;) para delimitar un string. 
+
+
+
+```r
+*w &lt;- c("lunes", "martes", "miércoles", "viernes")
+```
+--
+
+```r
+w
+```
+
+```
+[1] "lunes"     "martes"    "miércoles" "viernes"  
+```
+--
+
+```r
+*class(w)
+```
+
+```
+[1] "character"
+```
+
+---
+class: hide-logo
+# Vector de caracteres
+
+- Un vector de clase `character` también puede incluir &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;números&lt;/span&gt; siempre que estén  &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;entre comillas&lt;/span&gt;
+
+
+```r
+*w &lt;- c("15", "16", "17", "19")
+```
+--
+
+```r
+w
+```
+
+```
+[1] "15" "16" "17" "19"
+```
+--
+
+```r
+*class(w)
+```
+
+```
+[1] "character"
+```
+
+
+---
+# Advertencias (warnings) 
+
+- Mensajes de advertencia **(Warnings)**: no necesariamente hay un error (ejecuta los comandos y solo te advierte de posibles inconvenientes).
+
+
+```r
+x1 &lt;- c(2, 8, 3, 4, 1)
+x2 &lt;- c(0, 7, 5, 5, 6, 1)
+pmax(x1, x2) 
+```
+
+```
+Warning in pmax(x1, x2): an argument will be fractionally recycled
+```
+
+```
+[1] 2 8 5 5 6 2
+```
+
+
+---
+# Errores (errors)
+- Mensajes de error aparecen en la consola con el texto  &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;Error: ...&lt;/span&gt;. 
+&lt;br&gt;&lt;br&gt;
+--
+
+- El error impide que se ejecute(n) la(s) líneas con error.
+&lt;br&gt;&lt;br&gt;
+--
+
+- Un error en el código es una orden que &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;R no puede interpretar&lt;/span&gt; . 
+&lt;br&gt;&lt;br&gt;
+--
+
+- Pueden deberse a &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;funciones mal escritas&lt;/span&gt; , &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;expresiones erróneas o incompletas&lt;/span&gt;, objetos que no han sido declarados, etc
+&lt;br&gt;
+&lt;img src="img/error_code.gif" style="display: block; margin: auto;" /&gt;
+&lt;br&gt;&lt;br&gt;
+--
+
+- Con &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;práctica&lt;/span&gt; y la ayuda de los foros se &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;aprende&lt;/span&gt; a entender los mensajes de error.
+
+
+---
+# Ayuda externa: buscador
+
+![](img/search.gif)&lt;!-- --&gt;
+
+---
+# Ayuda externa: Stackoverflow
+
+![](img/stackoverflow.gif)&lt;!-- --&gt;
+
+---
+class: hide-logo
+# Sentencia no finalizada 
+
+.left-column[
+Si en vez de <i class="fas  fa-greater-than "></i>
+
+aparece el símbolo <i class="fas  fa-plus "></i>
+
+hay una sentencia no finalizada.
+
+]
+.right-column[
+![](img/error.gif)&lt;!-- --&gt;
+
+]
+
+ 
+&lt;!-- ![](img/error.gif) --&gt;
+
+
+
+---
+# Nombrar objetos
+
+- Para nombrar objetos se pueden usar: &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;letras&lt;/span&gt;, &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;números&lt;/span&gt;, &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;punto&lt;/span&gt;, &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;guión bajo&lt;/span&gt; 
+&lt;br&gt;&lt;br&gt;
+--
+
+- No puede empezar con números ni guión bajo: &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;~~2018listado~~&lt;/span&gt;  &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;~~_listado~~&lt;/span&gt; 
+&lt;br&gt;&lt;br&gt;
+--
+
+- Si empieza con punto debe seguirle una letra: &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;.listado&lt;/span&gt; 
+&lt;br&gt;&lt;br&gt;
+--
+
+- Lo común es que comiencen con una letra: &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;listado_2020&lt;/span&gt; 
+&lt;br&gt;&lt;br&gt;
+--
+
+- R es &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;sensible a mayúsculas y minúsculas&lt;/span&gt;: no es lo mismo Listado que listado
+
+&lt;!-- # ver --&gt;
+
+&lt;!--   https://www.computerworld.com/article/2497143/business-intelligence-beginner-s-guide-to-r-introduction.html --&gt;
+
+
+---
+# Ejercicio (6')
+
+- Crea un objeto llamado `nombre` con tu nombre escrito todo en minúscula
+&lt;br
+
+- Crea un objeto llamado  `apellido` con tu apellido escrito todo en minúscula
+&lt;br&gt;
+
+- Crea un objeto llamado `edad` con tu edad en números
+&lt;br&gt;
+
+- Pregunta la clase de cada uno de esos objetos e imprime el contenido de cada objeto.
+&lt;br&gt;
+
+- Crea un objeto llamado `nombre_completo` que contenga tu nombre y tu apellido, reutilizando los objetos creados. La función paste() puede ser de ayuda.
+&lt;br&gt;
+
+- ¿Cuántos caracteres tiene el objeto nombre, y el objeto apellido? La función `nchar()` puede ser de ayuda.
+
+---
+class: hide-logo
+# Vector de caracteres
+
+- Qué pasa si por error omito las comillas en un elemento:
+
+```r
+z &lt;- c("lunes", 15)
+```
+--
+
+- R no da error en este caso, convierte al 15 en texto.  
+
+```r
+z
+```
+
+```
+[1] "lunes" "15"   
+```
+
+```r
+class(z)
+```
+
+```
+[1] "character"
+```
+--
+Si se combinan objetos de diferentes tipos, R reasigna los elementos a la clase apropiada. Esto se llama coerción.
+
+
+---
+class: hide-logo
+# Coerción
+
+- Como mencionamos anteriormente, estos elementos deben ser todos de la misma clase. 
+&lt;br&gt;&lt;br&gt;
+--
+
+- Si se combinan objetos de diferente clase, R reasigna los elementos a la clase apropiada. Como en el ejemplo que concatenaba elementos numéricos y caracteres.
+&lt;br&gt;&lt;br&gt;
+--
+
+- Si contiene números y texto el vector será de clase `character`.
+&lt;br&gt;&lt;br&gt;
+--
+
+- La coerción es necesaria para el funcionamiento correcto de R. Al mismo tiempo puede ser una fuente de errores si no se tiene en cuenta.
+&lt;br&gt;&lt;br&gt;
+--
+
+- ¿Qué te imaginas pasará si en vez de omitir las comillas en 15, las omito en lunes?
+&lt;br&gt;&lt;br&gt;
+--
+
+- Un texto sin comillas en R es un objeto (siempre que cumpla las reglas de un nombre de objeto).
+
+---
+class: hide-logo
+# ¿Por qué importa la clase de un objeto?
+
+- La clase de un objeto afecta cómo las funciones trabajan con el mismo. 
+&lt;br&gt;&lt;br&gt;
+--
+
+- Por ejemplo, la función mean() puede generar salidas coherentes con objetos numéricos o lógicos, pero no con caracteres. 
+&lt;br&gt;&lt;br&gt;
+--
+
+
+
+```r
+mean(x)
+w + 5
+```
+
+- No toda función se puede aplicar a cualquier tipo de objeto.
+
+---
+class: hide-logo
+# Vectorización
+
+.pull-left[
+- R vectoriza las operaciones de manera que si sumo un número a un vector numérico, a cada elemento del vector le sumará ese número.
+
+- Esta propiedad es una ventaja ya que permite evitar loops en muchas de situaciones y de esta manera se obtiene un código más 'limpio' y eficiente.
+
+- El operador  &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;:&lt;/span&gt; sirve para generar vectores numéricos
+
+]
+
+.pull-right[
+
+```r
+*x &lt;- -1:4
+x
+```
+
+```
+[1] -1  0  1  2  3  4
+```
+
+
+```r
+*x + 5 # adiciono 5
+```
+
+```
+[1] 4 5 6 7 8 9
+```
+
+
+```r
+*x * 3 # multiplico por 3
+```
+
+```
+[1] -3  0  3  6  9 12
+```
+
+]
+
+
+---
+class: hide-logo
+# Funciones descriptivas de un vector numérico
+
+- &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;length(x)&lt;/span&gt;: devuelve la cantidad de elementos de x
+&lt;br&gt;&lt;br&gt;
+--
+
+- &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;sort(x, decreasing = F)&lt;/span&gt;: ordena los elementos de manera creciente 
+&lt;br&gt;&lt;br&gt;
+--
+
+- &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;sum(x)&lt;/span&gt;: devuelve la suma de los elementos de x
+&lt;br&gt;&lt;br&gt;
+--
+
+- &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;max(x)&lt;/span&gt;: máximo
+&lt;br&gt;&lt;br&gt;
+--
+
+- &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;min(x)&lt;/span&gt;: mínimo
+
+---
+class: hide-logo
+# Funciones descriptivas de un vector numérico
+
+- &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;mean(x)&lt;/span&gt;: promedio aritmético de x
+&lt;br&gt;&lt;br&gt;
+--
+
+- &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;median(x)&lt;/span&gt;: mediana de x
+&lt;br&gt;&lt;br&gt;
+--
+
+- &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;sd(x)&lt;/span&gt;: desvío estándar de x
+&lt;br&gt;&lt;br&gt;
+--
+
+- &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;var(x)&lt;/span&gt;: varianza de x
+&lt;br&gt;&lt;br&gt;
+--
+
+- &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;summary(x)&lt;/span&gt;: resumen descriptivo de x (mínimo, máximo, media, mediana, cuartiles)
+&lt;!-- &lt;br&gt; --&gt;
+&lt;!-- -- --&gt;
+
+&lt;!-- - quantile(x, c(0.2,0.4,0.6,0.8)): cuantiles  --&gt;
+
+
+&lt;!-- --- --&gt;
+&lt;!-- # Ejercicio --&gt;
+
+
+&lt;!--     Use your usual r-script to save the code for the following exercises. --&gt;
+&lt;!--     Create a vector of length 50 that contains the numbers from 1 to 5 repeated for 10 times. --&gt;
+&lt;!--     Create a vector x of length 404 in which the numbers 199 to 400 are repeated two times. Generate a new vector y, that contains the elements of x on the positions 53, 78 and 99. --&gt;
+&lt;!--     Create a character vector Freunde that contains the names of your three best friends. --&gt;
+
+
+
+
+&lt;!-- https://www.analyticsvidhya.com/blog/2019/05/beginner-guide-tidyverse-most-powerful-collection-r-packages-data-science/ --&gt;
+
+
+&lt;!-- # Los objetos del tipo "logical" son resultado de operaciones lógicas, como  --&gt;
+&lt;!-- # comparaciones (¿a es mayor que b?, ¿h es distinto de 3.1415?, etc). Por  --&gt;
+&lt;!-- # ejemplo: --&gt;
+&lt;!-- u &lt;- 5 &gt; 2:8 --&gt;
+&lt;!-- u # [1]  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE --&gt;
+&lt;!-- class(u) # "logical", es un vector con valores booleanos (ver lección relativa --&gt;
+&lt;!--          # a operadores lógicos). --&gt;
+&lt;!-- # Como verán la comparación aquí se hizo entre 5 y todos los elementos de 2:8 --&gt;
+
+
+
+
+
+---
+class: hide-logo
+# Data frame
+
+- Puede verse como un conjunto de vectores de diferente clase pero de igual largo.
+&lt;br&gt;&lt;br&gt;
+--
+
+- La Función data.frame() crea un marco de datos.
+&lt;br&gt;&lt;br&gt;
+--
+
+
+```r
+df &lt;- data.frame(x, w)
+```
+--
+
+- En un data frame, cada variable es un vector. 
+&lt;br&gt;&lt;br&gt;
+--
+
+- En general el data frame vendrá dado en un archivo que vamos a leer/importar desde R.
+
+---
+# ![](img/airbnb.png) Barcelona
+
+- Trabajaremos con los datos de alojamientos en Barcelona de Airbnb al 10 de enero de 2020. Son datos abiertos disponibles en http://insideairbnb.com/get-the-data.html. 
+
+- Son datos abiertos con licencia Creative Commons CC0 1.0 Universal "Public Domain Dedication.
+
+| Archivos | Descripción|
+|---------|------------|
+|listings.csv| listado de alojamientos disponibles | 
+|reviews.csv | evaluaciones de personas alojadas |
+|neighbourhoods.csv | listado de barrios |
+|neighbourhoods.geojson | información geográfica de los barrios |
+  
+---
+# Cómo funciona Airbnb
+
+.pull-left[
+- Quienes se hospedan pueden elegir entre casas/apartamentos enteros, solo cuartos privados o cuartos compartidos (room_type).
+&lt;br&gt;&lt;br&gt;
+
+- Luego de la estadía deben dejar una evaluación (review). 
+&lt;br&gt;&lt;br&gt;
+
+- Los alojamientos varían en precio, mínimo de días de estadía, los días disponible, etc. 
+&lt;br&gt;&lt;br&gt;
+]
+
+.pull-right[
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="https://live.staticflickr.com/804/26168540077_e7b1d01739_c_d.jpg" alt="Lisboa" width="280px" /&gt;
+&lt;p class="caption"&gt;Lisboa&lt;/p&gt;
+&lt;/div&gt;
+
+]
+
+---
+class: hide-logo
+# Importar archivo: read.csv()
+
+
+
+
+
+```r
+listado &lt;- read.csv("data/listings.csv", stringsAsFactors = FALSE)
+```
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; host_id &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; neighbourhood_group &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; latitude &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; longitude &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; room_type &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; price &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 71615 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Eixample &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 41.40420 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.17306 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Entire home/apt &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 60 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 90417 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sant Martí &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 41.41203 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.22114 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Entire home/apt &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 210 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 136853 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Gràcia &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 41.40950 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.15938 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Entire home/apt &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 52 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 136853 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Gràcia &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 41.40928 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.16112 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Entire home/apt &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 58 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 141199 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Les Corts &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 41.38720 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.14088 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Private room &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 35 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+# Visualizar los datos
+
+
+```r
+# ver el objeto en otra ventana
+View(listado)
+```
+
+&lt;!-- # ver que contiene listado directo en la consola, no lo hagan! --&gt;
+&lt;!-- listado --&gt;
+![](img/view.gif)
+---
+# ¿Qué queremos averiguar de estos datos?
+
+- Primero me hago preguntas, luego piensa cuál es el código que las responde
+&lt;br&gt;&lt;br&gt;
+--
+
+- ¿Cuáles son las &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;variables&lt;/span&gt;? ¿Cuántas son?
+&lt;br&gt;&lt;br&gt;
+--
+
+- ¿Cuántas &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;observaciones&lt;/span&gt; tiene?
+&lt;br&gt;&lt;br&gt;
+--
+
+- ¿Qué &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;valores&lt;/span&gt; toman esas variables?
+&lt;br&gt;&lt;br&gt;
+--
+
+- ¿Hay datos &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;faltantes&lt;/span&gt;?
+&lt;br&gt;&lt;br&gt;
+--
+
+- ¿Hay casos &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;duplicados&lt;/span&gt;?
+
+---
+class: hide-logo
+# Explorar los datos
+
+Las funciones dim(), names() y str() admiten un data frame como argumento. 
+&lt;!-- https://arm.rbind.io/slides/xaringan.html#99 --&gt;
+
+```r
+dim(listado) # cantidad de filas y columnas
+nrow(listado) # cantidad de filas
+ncol(listado) # cantidad de columnas
+```
+--
+
+```r
+names(listado) # nombre de variables
+```
+--
+
+```r
+str(listado) # estructura de la base
+```
+--
+La función summary() admite un data frame como argumento pero también una variable.
+
+```r
+summary(listado) # resumen descriptivo de variables
+```
+
+---
+class: hide-logo
+# Variables numéricas
+
+Para acceder a una variable de un data frame es necesario escribir  &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;&amp;lt;objeto&amp;gt;$&amp;lt;variable&amp;gt;&lt;/span&gt;
+
+.pull-left[
+
+```r
+# Máximo
+*max(listado$price)
+```
+
+```
+[1] 15000
+```
+
+```r
+# Mínimo
+*min(listado$price)
+```
+
+```
+[1] 0
+```
+
+```r
+# Promedio
+*mean(listado$price)
+```
+
+```
+[1] 129.7599
+```
+
+]
+
+.pull-right[
+
+```r
+# Mediana
+*median(listado$price)
+```
+
+```
+[1] 60
+```
+
+
+```r
+# Varianza
+*var(listado$price)
+```
+
+```
+[1] 194775.5
+```
+
+```r
+# Desvío estándar
+*sd(listado$price)
+```
+
+```
+[1] 441.3338
+```
+]
+&lt;!-- --- --&gt;
+&lt;!-- # data$ --&gt;
+
+&lt;!-- Acceder a variables en un data frame: **data$variable** --&gt;
+
+&lt;!-- &lt;br&gt;&lt;br&gt; --&gt;
+&lt;!-- &lt;iframe src="https://giphy.com/embed/b55x0VFpFKm7S" width="480" height="333" frameBorder="0" class="giphy-embed" allowFullScreen&gt;&lt;/iframe&gt;&lt;p&gt;&lt;a href="https://giphy.com/gifs/lisa-simpson-writing-the-simpsons-b55x0VFpFKm7S"&gt;&lt;/a&gt;&lt;/p&gt; --&gt;
+---
+# Ejercicio (3')
+
+- Cargar el archivo `listings.csv` de Barcelona.
+&lt;br&gt;&lt;br&gt;
+
+- Calcular la media, mediana y varianza de las variables `minimum_nights`, `number_of_reviews`, `last_review`.
+&lt;br&gt;&lt;br&gt;
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
