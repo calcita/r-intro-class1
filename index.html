@@ -1320,6 +1320,269 @@ Para acceder a una variable de un data frame es necesario escribir  &lt;span sty
 
 - Calcular la media, mediana y varianza de las variables `minimum_nights`, `number_of_reviews`, `last_review`.
 &lt;br&gt;&lt;br&gt;
+ 
+---
+class: inverse, center, middle
+# Paquetes
+
+---
+class: hide-logo
+# Paquetes: extender las funcionalidades de R
+
+- Por defecto vienen &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;precargadas&lt;/span&gt; una serie de funciones que están en el paquete &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;'base'&lt;/span&gt;.
+&lt;br&gt;&lt;br&gt;
+--
+
+- Las &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;funciones&lt;/span&gt; en R se organizan en paquetes según &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;temas&lt;/span&gt; o disciplinas.
+&lt;br&gt;&lt;br&gt;
+--
+
+- Los paquetes debe &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;instalarse en R una vez&lt;/span&gt; pero es necesario &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;cargarlos en cada sesión&lt;/span&gt; (cada vez que abrimos R). 
+&lt;br&gt;&lt;br&gt;
+--
+
+- Hay millones de funciones si todas estuvieran precargadas, no habría suficiente memoria RAM para trabajar. Existen paquetes de tan variadas disciplinas que es muy probable que utilicemos relativamente pocos. 
+&lt;br&gt;&lt;br&gt;
+--
+
+- Podemos consultar los paquetes disponibles escribiendo la función &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;available.packages()&lt;/span&gt; y los instalados usando &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;installed.packages()&lt;/span&gt;. También podemos generar nuestras propias funciones e incluso crear un paquete de R!
+
+---
+class: inverse, center, middle
+# TidyveRse
+
+---
+class: hide-logo
+# tidyverse
+
+.pull-left[
+
+&lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;Conjunto de paquetes&lt;/span&gt; para:
+&lt;br&gt;&lt;br&gt;
+
+
+&lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;Importar&lt;/span&gt;
+&lt;br&gt;&lt;br&gt;
+
+&lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;Limpiar y transformar&lt;/span&gt;
+&lt;br&gt;&lt;br&gt;
+
+&lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;Procesar y analizar&lt;/span&gt;
+&lt;br&gt;&lt;br&gt;
+
+&lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;Visualizar&lt;/span&gt;
+
+ &lt;!-- procesar, analizar y visualizar datos. --&gt;
+]
+.pull-rigth[
+&lt;img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/tidyverse.png" width="300px" /&gt;
+Proporciona una forma unificada, armoniosa y más poderosa de trabajar con datos que la que ofrece el paquete base.
+]
+
+
+---
+class: hide-logo
+# Importación/Exportación de archivos
+
+.pull-left[
+
+Archivos de texto plano&lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;Visualizar&lt;/span&gt; (txt, csv, tsv)
+
+
+&lt;!-- ![](img/readr.png){width=180px} --&gt;
+&lt;img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/readr.png" width="120px" style="display: block; margin: auto;" /&gt;
+
+Formatos propietarios&lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;Visualizar&lt;/span&gt; (dta, sav)
+
+&lt;img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/haven.png" width="120px" style="display: block; margin: auto;" /&gt;
+
+]
+.pull-rigth[
+&lt;br&gt;
+Archivos &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;Excel&lt;/span&gt; (xls, xlsx)
+
+&lt;img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/readxl.png" width="120px" style="display: block; margin: auto;" /&gt;
+&lt;br&gt;
+
+Paquete jsolite, archivos &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;JSON&lt;/span&gt; (JavaScript Object Notation)
+&lt;img src="img/json.png" width="120px" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+class: hide-logo
+# Manipulación de datos
+
+.pull-left[
+
+&lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;Trasformar &lt;/span&gt; estructura de datos 
+
+&lt;img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/tidyr.png" width="140px" style="display: block; margin: auto;" /&gt;
+
+Manipular &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;texto&lt;/span&gt;
+
+&lt;img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/stringr.png" width="140px" style="display: block; margin: auto;" /&gt;
+
+]
+.pull-rigth[
+&lt;br&gt;
+Manipular &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;fechas&lt;/span&gt; 
+
+&lt;img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/lubridate.png" width="140px" style="display: block; margin: auto;" /&gt;
+
+
+Manipular &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;data frame&lt;/span&gt; 
+
+&lt;img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/dplyr.png" width="140px" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+class: hide-logo
+# Análisis y Visualización de datos
+
+.pull-left[
+&lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;Gráficos y mapas&lt;/span&gt; 
+&lt;br&gt;
+&lt;br&gt;
+
+&lt;img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/ggplot2.png" width="250px" style="display: block; margin: auto;" /&gt;
+
+]
+.pull-rigth[
+&lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;Modelización&lt;/span&gt; 
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+&lt;img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/broom.png" width="250px" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+class: hide-logo
+# Paquetes: instalar y cargar
+
+
+
+```r
+# instalar desde el CRAN
+install.packages("readr")
+
+# instalar desde github
+# devtools::install_github("username/packagename")
+devtools::install_github("tidyverse/readr")
+
+# cargar
+library(readr)
+```
+
+---
+class: hide-logo
+# readr::read_csv()
+
+
+
+
+```r
+library(readr)
+listado &lt;- read_csv("data/listings.csv")
+# ver el objeto en la consola, ya no muestra hasta 1000 filas
+listado
+```
+
+```
+# A tibble: 20,708 x 16
+      id name  host_id host_name neighbourhood_g… neighbourhood latitude
+   &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;            &lt;chr&gt;            &lt;dbl&gt;
+ 1 18674 Huge…   71615 Mireia A… Eixample         la Sagrada F…     41.4
+ 2 23197 Foru…   90417 Etain (M… Sant Martí       el Besòs i e…     41.4
+ 3 31958 Gaud…  136853 Fidelio   Gràcia           el Camp d'en…     41.4
+ 4 32471 Gaud…  136853 Fidelio   Gràcia           el Camp d'en…     41.4
+ 5 32615 Sunn…  141199 Inge      Les Corts        les Corts         41.4
+ 6 32711 Sagr…  135703 Nick      Gràcia           el Camp d'en…     41.4
+ 7 34241 Priv…   73163 Andres    Ciutat Vella     el Barri Gòt…     41.4
+ 8 34981 VIDR…   73163 Andres    Ciutat Vella     el Barri Gòt…     41.4
+ 9 35379 Doub…  152232 Pablo     Eixample         l'Antiga Esq…     41.4
+10 35390 Sing…  152232 Pablo     Eixample         l'Antiga Esq…     41.4
+# … with 20,698 more rows, and 9 more variables: longitude &lt;dbl&gt;,
+#   room_type &lt;chr&gt;, price &lt;dbl&gt;, minimum_nights &lt;dbl&gt;,
+#   number_of_reviews &lt;dbl&gt;, last_review &lt;date&gt;, reviews_per_month &lt;dbl&gt;,
+#   calculated_host_listings_count &lt;dbl&gt;, availability_365 &lt;dbl&gt;
+```
+
+---
+# Ejercicio
+
+- Instalar el paquete `readr`.
+
+- Cargar el paquete `readr`.
+
+- Importar el archivo `listings.csv`.
+
+
+---
+class: inverse, center, middle
+# R 'base'
+
+---
+# Directorio de trabajo (working directory)
+
+
+- Refiere a los archivos que están en la &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;computadora&lt;/span&gt;
+&lt;br&gt;&lt;br&gt;
+--
+- &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;getwd()&lt;/span&gt;: muestra la ruta del directorio de trabajo. R trabaja por defecto en cierta carpeta que se llama directorio de trabajo donde va a leer y guardar los archivos.
+&lt;br&gt;&lt;br&gt;
+--
+- &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;setwd()&lt;/span&gt;: define el directorio de trabajo, para modificarlo.
+  - No es recomendable que la correcta ejecución de la sintaxis dependa de una ruta específica...
+  - Más adelante veremos qué es trabajar en proyecto (Rproj) para salvar este problema.
+--
+
+- &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;dir()&lt;/span&gt;: muestra los archivos que están en el directorio de trabajo
+&lt;br&gt;&lt;br&gt;
+--
+- R no entiende el &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;\&lt;/span&gt; (con backslash se escriben las rutas en Windows)
+&lt;br&gt;&lt;br&gt;
+--
+- Las rutas en R se definen con &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;/&lt;/span&gt; y también es válido  usar `\\`
+
+
+---
+# Espacio de trabajo (workspace / environment)
+
+- Se ubica en la &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;memoria RAM&lt;/span&gt;. 
+&lt;br&gt;&lt;br&gt;
+--
+
+- La colección de &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;objetos&lt;/span&gt;  generados en una sesión. 
+&lt;br&gt;&lt;br&gt;
+--
+
+- &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;ls()&lt;/span&gt;  para obtener el &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;listado de los objetos&lt;/span&gt; almacenados en la memoria RAM. 
+&lt;br&gt;&lt;br&gt;
+--
+
+-  &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;Al cerrar Rstudio se pierden&lt;/span&gt;, pero tenemos la sintaxis para volver a crearlos :)
+&lt;br&gt;&lt;br&gt;
+--
+
+- &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;Un objeto no modifica un archivo&lt;/span&gt;  a menos que se guarde/exporte como tal usando una función para tal fin. No es posible modificar un archivo por error.
+&lt;br&gt;&lt;br&gt;
+--
+
+- Para eliminar objetos puede utilizar la orden &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;rm()&lt;/span&gt;.
+&lt;br&gt;&lt;br&gt;
+--
+
+- Al cerrar RStudio te consulta si querés guardar el espacio de trabajo (workspace), no lo guardes nunca, no sirve para nada. En vez de eso, configura RStudio para que no te haga más esa pregunta.
+
+---
+# ~~Save workspace~~
+
+![](img/saveworkspace.gif)
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

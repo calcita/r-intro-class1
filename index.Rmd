@@ -1193,3 +1193,267 @@ sd(listado$price) #<<
 - Calcular la media, mediana y varianza de las variables `minimum_nights`, `number_of_reviews`, `last_review`.
 <br><br>
  
+---
+class: inverse, center, middle
+# Paquetes
+
+---
+class: hide-logo
+# Paquetes: extender las funcionalidades de R
+
+- Por defecto vienen `r text_spec2("precargadas")` una serie de funciones que están en el paquete `r text_spec2("'base'")`.
+<br><br>
+--
+
+- Las `r text_spec2("funciones")` en R se organizan en paquetes según `r text_spec2("temas")` o disciplinas.
+<br><br>
+--
+
+- Los paquetes debe `r text_spec2("instalarse en R una vez")` pero es necesario `r text_spec2("cargarlos en cada sesión")` (cada vez que abrimos R). 
+<br><br>
+--
+
+- Hay millones de funciones si todas estuvieran precargadas, no habría suficiente memoria RAM para trabajar. Existen paquetes de tan variadas disciplinas que es muy probable que utilicemos relativamente pocos. 
+<br><br>
+--
+
+- Podemos consultar los paquetes disponibles escribiendo la función `r text_spec2("available.packages()")` y los instalados usando `r text_spec2("installed.packages()")`. También podemos generar nuestras propias funciones e incluso crear un paquete de R!
+
+---
+class: inverse, center, middle
+# TidyveRse
+
+---
+class: hide-logo
+# tidyverse
+
+.pull-left[
+
+`r text_spec2("Conjunto de paquetes")` para:
+<br><br>
+
+
+`r text_spec2("Importar")`
+<br><br>
+
+`r text_spec2("Limpiar y transformar")`
+<br><br>
+
+`r text_spec2("Procesar y analizar")`
+<br><br>
+
+`r text_spec2("Visualizar")`
+
+ <!-- procesar, analizar y visualizar datos. -->
+]
+.pull-rigth[
+```{r out.width = "300px" ,echo=FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/tidyverse.png")
+```
+Proporciona una forma unificada, armoniosa y más poderosa de trabajar con datos que la que ofrece el paquete base.
+]
+
+
+---
+class: hide-logo
+# Importación/Exportación de archivos
+
+.pull-left[
+
+Archivos de texto plano`r text_spec2("Visualizar")` (txt, csv, tsv)
+
+
+<!-- ![](img/readr.png){width=180px} -->
+```{r out.width = "120px" ,fig.align="center", echo=FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/readr.png")
+```
+
+Formatos propietarios`r text_spec2("Visualizar")` (dta, sav)
+
+```{r out.width = "120px" ,fig.align="center", echo=FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/haven.png")
+```
+
+]
+.pull-rigth[
+<br>
+Archivos `r text_spec2("Excel")` (xls, xlsx)
+
+```{r out.width = "120px" ,fig.align="center", echo=FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/readxl.png")
+```
+<br>
+
+Paquete jsolite, archivos `r text_spec2("JSON")` (JavaScript Object Notation)
+```{r out.width = "120px" ,fig.align="center", echo=FALSE}
+knitr::include_graphics("img/json.png")
+```
+
+]
+
+
+---
+class: hide-logo
+# Manipulación de datos
+
+.pull-left[
+
+`r text_spec2("Trasformar ")` estructura de datos 
+
+```{r out.width = "140px" ,fig.align="center", echo=FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/tidyr.png")
+```
+
+Manipular `r text_spec2("texto")`
+
+```{r out.width = "140px" ,fig.align="center", echo=FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/stringr.png")
+```
+
+]
+.pull-rigth[
+<br>
+Manipular `r text_spec2("fechas")` 
+
+```{r out.width = "140px" ,fig.align="center", echo=FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/lubridate.png")
+```
+
+
+Manipular `r text_spec2("data frame")` 
+
+```{r out.width = "140px" ,fig.align="center", echo=FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/dplyr.png")
+```
+
+]
+
+---
+class: hide-logo
+# Análisis y Visualización de datos
+
+.pull-left[
+`r text_spec2("Gráficos y mapas")` 
+<br>
+<br>
+
+```{r out.width = "250px", fig.align="center" ,echo=FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/ggplot2.png")
+```
+
+]
+.pull-rigth[
+`r text_spec2("Modelización")` 
+<br>
+<br>
+<br>
+
+```{r out.width = "250px" ,fig.align="center", echo=FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/broom.png")
+```
+
+]
+
+---
+class: hide-logo
+# Paquetes: instalar y cargar
+
+
+```{r eval=FALSE}
+# instalar desde el CRAN
+install.packages("readr")
+
+# instalar desde github
+# devtools::install_github("username/packagename")
+devtools::install_github("tidyverse/readr")
+
+# cargar
+library(readr)
+```
+
+---
+class: hide-logo
+# readr::read_csv()
+
+```{r echo = FALSE}
+data <- "/home/calcita/MEGA/R/JOBS/Cursos y presentaciones/UCU/escuelainvierno_ucu/2020/Slides/code/data"
+```
+
+```{r eval = TRUE}
+library(readr)
+listado <- read_csv("data/listings.csv")
+# ver el objeto en la consola, ya no muestra hasta 1000 filas
+listado
+```
+
+---
+# Ejercicio
+
+- Instalar el paquete `readr`.
+
+- Cargar el paquete `readr`.
+
+- Importar el archivo `listings.csv`.
+
+
+---
+class: inverse, center, middle
+# R 'base'
+
+---
+# Directorio de trabajo (working directory)
+
+
+- Refiere a los archivos que están en la `r text_spec2("computadora")`
+<br><br>
+--
+- `r text_spec2("getwd()")`: muestra la ruta del directorio de trabajo. R trabaja por defecto en cierta carpeta que se llama directorio de trabajo donde va a leer y guardar los archivos.
+<br><br>
+--
+- `r text_spec2("setwd()")`: define el directorio de trabajo, para modificarlo.
+  - No es recomendable que la correcta ejecución de la sintaxis dependa de una ruta específica...
+  - Más adelante veremos qué es trabajar en proyecto (Rproj) para salvar este problema.
+--
+
+- `r text_spec2("dir()")`: muestra los archivos que están en el directorio de trabajo
+<br><br>
+--
+- R no entiende el `r text_spec2("\\")` (con backslash se escriben las rutas en Windows)
+<br><br>
+--
+- Las rutas en R se definen con `r text_spec2("/")` y también es válido  usar `\\`
+
+
+---
+# Espacio de trabajo (workspace / environment)
+
+- Se ubica en la `r text_spec2("memoria RAM")`. 
+<br><br>
+--
+
+- La colección de `r text_spec2("objetos")`  generados en una sesión. 
+<br><br>
+--
+
+- `r text_spec2("ls()")`  para obtener el `r text_spec2("listado de los objetos")` almacenados en la memoria RAM. 
+<br><br>
+--
+
+-  `r text_spec2("Al cerrar Rstudio se pierden")`, pero tenemos la sintaxis para volver a crearlos :)
+<br><br>
+--
+
+- `r text_spec2("Un objeto no modifica un archivo")`  a menos que se guarde/exporte como tal usando una función para tal fin. No es posible modificar un archivo por error.
+<br><br>
+--
+
+- Para eliminar objetos puede utilizar la orden `r text_spec2("rm()")`.
+<br><br>
+--
+
+- Al cerrar RStudio te consulta si querés guardar el espacio de trabajo (workspace), no lo guardes nunca, no sirve para nada. En vez de eso, configura RStudio para que no te haga más esa pregunta.
+
+---
+# ~~Save workspace~~
+
+![](img/saveworkspace.gif)
