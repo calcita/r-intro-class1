@@ -563,7 +563,7 @@ class: hide-logo
 # Atajos de teclado
 
 <center>
-<img src="https://media.giphy.com/media/vpURqIvpuDguQ/source.gif>
+<img src="https://media.giphy.com/media/vpURqIvpuDguQ/source.gif"/>
 </center>
 
 
