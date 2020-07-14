@@ -1,8 +1,9 @@
 ---
-title: "Intro a la programación en  "
-subtitle: "Escuela de Invierno - Julio 2020"
+title: "Intro a la programación en  R"
+subtitle: "Escuela de Invierno - Julio 2020 <br> Gabriela Mathieu"
 #`r icon::fa_r_project(colour = "#43a2ca")`
 # author: "<br> `r icon::fa_creative_commons(colour = "#f0f0f0")` `r icon::fa_creative_commons_by(colour = "#f0f0f0")` `r icon::fa_creative_commons_sa(colour = "#f0f0f0")` <br> Gabriela Mathieu"
+author: <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /> <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
 output:
   xaringan::moon_reader:
     css: xaringan-themer.css
@@ -19,12 +20,6 @@ output:
           </div>
         </div>
 ---
-<!-- https://raw.githubusercontent.com/EvaMaeRey/flipbookr/master/inst/rmarkdown/templates/template-name/skeleton/skeleton.Rmd -->
-<!-- https://github.com/mine-cetinkaya-rundel/teach-r-online/blob/master/01-cloud/01-cloud.Rmd -->
-<!-- https://mine-cetinkaya-rundel.github.io/teach-r-online/01-cloud/01-cloud.html#13 -->
-<!-- https://github.com/hadley/emo -->
-<!-- https://arm.rbind.io/slides/xaringan.html#118 -->
-<!-- https://arm.rbind.io/slides/xaringan.html#120 -->
 ```{r, include = F}
 # This is the recommended set up for flipbooks
 # you might think about setting cache to TRUE as you gain practice --- building flipbooks from scratch can be time consuming
@@ -67,9 +62,6 @@ text_spec2 <- function(x = "x"){
 class: hide-logo
 # Características del curso
 
-<!-- use the trailing comment #<< to highlight specific lines of the code -->
-<!-- https://zhiiiyang.github.io/XaringanTutorial/#35 -->
-<!-- https://zhiiiyang.github.io/XaringanTutorial/#47 -->
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 knitr::opts_chunk$set(warning = FALSE, message = FALSE)
@@ -113,30 +105,22 @@ Participar durante la clase a través del `r text_spec2("chat")` de zoom o `r te
 Comunicación: `r text_spec2("foro y mail")`
 ]
 
-<!-- --- -->
-<!-- # Talleres  -->
+---
+# Objetivos del curso 
 
+- Introducción al lenguaje `r text_spec2("R")` mediante `r text_spec2("RStudio")`
 
-<!-- - `r icon::fa("microphone", size=1, color = "#43a2ca")`  micrófono apagado. -->
-<!-- -- -->
+- Manejar un gran conjunto de `r text_spec2("funciones: básicas y más avanzadas")`
 
-<!-- - `r icon::fa("question", size=1, color = "#43a2ca")`  Escribir por chat o pedir la palabra  -->
-<!-- -- -->
+- Generar `r text_spec2("autonomía")` para usar R y `r text_spec2("seguir aprendiendo")` después del curso
 
-<!-- -  Es importante que participen, pregunten y respondan. No hay preguntas tontas! -->
+- Aprender a programar en R a través de la `r text_spec2(" lógica tidyverse")` para lograr rápidamente:
 
-<!-- -  Se agradece usen su nombre y apellido y una foto de perfil -->
-<!-- -- -->
+  - Trabajar con `r text_spec2("datos reales")` e interesantes.
 
-<!-- -  `r icon::fa("users", size=1, color = "#43a2ca")`  Serán organizados en grupos aleatorios durante los ejercicios de modo que puedan ayudarse entre ustedes. -->
-<!-- -- -->
+  - `r text_spec2("Procesar")` y transformar los datos. 
 
-<!-- -  `r icon::fa("video", size=1, color = "#43a2ca")` Cada taller será grabado y se publicará el video posteriormente. -->
-
-
-<!-- - Todos los materiales del curso se pueden compartir y modificar para -->
-<!-- futuros usos manteniendo su licencia CC-BY-SA  -->
-
+  - Crea `r text_spec2("visualizaciones")` atractivas e informativas.
 
 ---
 class: hide-logo
@@ -239,9 +223,7 @@ Comunidad en Uruguay: [meetup R-Ladies](https://www.meetup.com/es-ES/rladies-mon
 ---
 class: inverse, center, middle
 # Intro R
-<!-- <img src="http://bit.ly/wiki-toddy" width="15%" align="right" /> -->
 
-<!-- .left[words] -->
 ---
 class: hide-logo 
 # Curva de aprendizaje
@@ -269,24 +251,6 @@ El curso busca guiarlos por un camino menos empinado
 <center>
 <img src="https://media.giphy.com/media/l2Jee8WOulPSBZwaI/source.gif"/>
 </center>
-
-<!-- Introducción al lenguaje R mediante RStudio -->
-
-<!-- Manejar un gran conjunto de funciones  -->
-
-<!-- Aprender R a través de la lógica tidyverse para lograr rápidamente: -->
-
-<!-- -- -->
-
-<!-- Trabajar con datos reales e interesantes. -->
-
-<!-- -- -->
-
-<!-- Crea visualizaciones atractivas e informativas. -->
-
-<!-- -- -->
-
-<!-- Presentar los resultados de manera sencilla y potente. -->
 
 
 ---
@@ -510,9 +474,6 @@ knitr::include_graphics("img/panels2.png")
 
 `r fontawesome::fa("link", fill = "#43a2ca")` [Cheatsheet](https://resources.rstudio.com/the-essentials-of-data-science/rstudio-ide)
 
-
-<!-- https://github.com/rstudio/hex-stickers/tree/master/PNG -->
-<!-- https://stackoverflow.com/questions/53549662/how-can-i-add-a-fontawesome-icon-to-a-table-in-rmarkdown -->
 ---
 # Script
 
@@ -605,18 +566,6 @@ class: hide-logo
 <img src="https://media.giphy.com/media/vpURqIvpuDguQ/source.gif>
 </center>
 
-<!-- stack-overflow -->
-
-
-<!-- file.copy(from=origen, to=destino) -->
-<!-- file.remove(origen) -->
-
-<!-- unzip(destname, exdir=destino, junkpaths=TRUE) -->
-
-
-<!-- if (dim(e)==2){ -->
-<!--   stop("es necesario agregar errores nuevos al objeto errores_EP") -->
-<!-- } -->
 
 ---
 class: hide-logo
@@ -640,4 +589,3 @@ class: hide-logo
 knitr::include_graphics("img/teclas.png")
 ```
 
-<!-- ![](img/teclas.png) -->

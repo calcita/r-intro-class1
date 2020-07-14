@@ -1,26 +1,22 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
   <head>
-    <title>Intro a la programación en</title>
+    <title>Intro a la programación en R</title>
     <meta charset="utf-8" />
-    <link href="taller1_parte1_files/font-awesome/css/fontawesome-all.min.css" rel="stylesheet" />
+    <meta name="author" content="  Creative Commons Attribution 4.0 International License" />
+    <link href="index_files/font-awesome/css/fontawesome-all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Intro a la programación en
-## Escuela de Invierno - Julio 2020
+# Intro a la programación en R
+## Escuela de Invierno - Julio 2020 <br> Gabriela Mathieu
+### <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /> <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
 
 ---
 
-&lt;!-- https://raw.githubusercontent.com/EvaMaeRey/flipbookr/master/inst/rmarkdown/templates/template-name/skeleton/skeleton.Rmd --&gt;
-&lt;!-- https://github.com/mine-cetinkaya-rundel/teach-r-online/blob/master/01-cloud/01-cloud.Rmd --&gt;
-&lt;!-- https://mine-cetinkaya-rundel.github.io/teach-r-online/01-cloud/01-cloud.html#13 --&gt;
-&lt;!-- https://github.com/hadley/emo --&gt;
-&lt;!-- https://arm.rbind.io/slides/xaringan.html#118 --&gt;
-&lt;!-- https://arm.rbind.io/slides/xaringan.html#120 --&gt;
 
 
 
@@ -29,9 +25,6 @@ class: center, middle, inverse, title-slide
 class: hide-logo
 # Características del curso
 
-&lt;!-- use the trailing comment #&lt;&lt; to highlight specific lines of the code --&gt;
-&lt;!-- https://zhiiiyang.github.io/XaringanTutorial/#35 --&gt;
-&lt;!-- https://zhiiiyang.github.io/XaringanTutorial/#47 --&gt;
 
 
 
@@ -72,30 +65,22 @@ Participar durante la clase a través del &lt;span style=" font-weight: bold;   
 Comunicación: &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;foro y mail&lt;/span&gt;
 ]
 
-&lt;!-- --- --&gt;
-&lt;!-- # Talleres  --&gt;
+---
+# Objetivos del curso 
 
+- Introducción al lenguaje &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;R&lt;/span&gt; mediante &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;RStudio&lt;/span&gt;
 
-&lt;!-- - <i class="fas  fa-microphone " style="color:#43a2ca;"></i>  micrófono apagado. --&gt;
-&lt;!-- -- --&gt;
+- Manejar un gran conjunto de &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;funciones: básicas y más avanzadas&lt;/span&gt;
 
-&lt;!-- - <i class="fas  fa-question " style="color:#43a2ca;"></i>  Escribir por chat o pedir la palabra  --&gt;
-&lt;!-- -- --&gt;
+- Generar &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;autonomía&lt;/span&gt; para usar R y &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;seguir aprendiendo&lt;/span&gt; después del curso
 
-&lt;!-- -  Es importante que participen, pregunten y respondan. No hay preguntas tontas! --&gt;
+- Aprender a programar en R a través de la &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt; lógica tidyverse&lt;/span&gt; para lograr rápidamente:
 
-&lt;!-- -  Se agradece usen su nombre y apellido y una foto de perfil --&gt;
-&lt;!-- -- --&gt;
+  - Trabajar con &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;datos reales&lt;/span&gt; e interesantes.
 
-&lt;!-- -  <i class="fas  fa-users " style="color:#43a2ca;"></i>  Serán organizados en grupos aleatorios durante los ejercicios de modo que puedan ayudarse entre ustedes. --&gt;
-&lt;!-- -- --&gt;
+  - &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;Procesar&lt;/span&gt; y transformar los datos. 
 
-&lt;!-- -  <i class="fas  fa-video " style="color:#43a2ca;"></i> Cada taller será grabado y se publicará el video posteriormente. --&gt;
-
-
-&lt;!-- - Todos los materiales del curso se pueden compartir y modificar para --&gt;
-&lt;!-- futuros usos manteniendo su licencia CC-BY-SA  --&gt;
-
+  - Crea &lt;span style=" font-weight: bold;    border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #b3e2cd !important;" &gt;visualizaciones&lt;/span&gt; atractivas e informativas.
 
 ---
 class: hide-logo
@@ -198,9 +183,7 @@ Comunidad en Uruguay: [meetup R-Ladies](https://www.meetup.com/es-ES/rladies-mon
 ---
 class: inverse, center, middle
 # Intro R
-&lt;!-- &lt;img src="http://bit.ly/wiki-toddy" width="15%" align="right" /&gt; --&gt;
 
-&lt;!-- .left[words] --&gt;
 ---
 class: hide-logo 
 # Curva de aprendizaje
@@ -228,24 +211,6 @@ El curso busca guiarlos por un camino menos empinado
 &lt;center&gt;
 &lt;img src="https://media.giphy.com/media/l2Jee8WOulPSBZwaI/source.gif"/&gt;
 &lt;/center&gt;
-
-&lt;!-- Introducción al lenguaje R mediante RStudio --&gt;
-
-&lt;!-- Manejar un gran conjunto de funciones  --&gt;
-
-&lt;!-- Aprender R a través de la lógica tidyverse para lograr rápidamente: --&gt;
-
-&lt;!-- -- --&gt;
-
-&lt;!-- Trabajar con datos reales e interesantes. --&gt;
-
-&lt;!-- -- --&gt;
-
-&lt;!-- Crea visualizaciones atractivas e informativas. --&gt;
-
-&lt;!-- -- --&gt;
-
-&lt;!-- Presentar los resultados de manera sencilla y potente. --&gt;
 
 
 ---
@@ -492,9 +457,6 @@ class: hide-logo
 
 &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#43a2ca;" viewBox="0 0 512 512"&gt;&lt;path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/&gt;&lt;/svg&gt; [Cheatsheet](https://resources.rstudio.com/the-essentials-of-data-science/rstudio-ide)
 
-
-&lt;!-- https://github.com/rstudio/hex-stickers/tree/master/PNG --&gt;
-&lt;!-- https://stackoverflow.com/questions/53549662/how-can-i-add-a-fontawesome-icon-to-a-table-in-rmarkdown --&gt;
 ---
 # Script
 
@@ -587,18 +549,6 @@ class: hide-logo
 &lt;img src="https://media.giphy.com/media/vpURqIvpuDguQ/source.gif&gt;
 &lt;/center&gt;
 
-&lt;!-- stack-overflow --&gt;
-
-
-&lt;!-- file.copy(from=origen, to=destino) --&gt;
-&lt;!-- file.remove(origen) --&gt;
-
-&lt;!-- unzip(destname, exdir=destino, junkpaths=TRUE) --&gt;
-
-
-&lt;!-- if (dim(e)==2){ --&gt;
-&lt;!--   stop("es necesario agregar errores nuevos al objeto errores_EP") --&gt;
-&lt;!-- } --&gt;
 
 ---
 class: hide-logo
@@ -619,8 +569,6 @@ class: hide-logo
 # Atajos de teclado
 
 &lt;img src="img/teclas.png" width="544" height="100%" style="display: block; margin: auto;" /&gt;
-
-&lt;!-- ![](img/teclas.png) --&gt;
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
